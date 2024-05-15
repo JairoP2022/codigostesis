@@ -79,7 +79,7 @@ CREATE TABLE `failed_jobs` (
 CREATE TABLE `faults` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `fecha_falla` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `valor_voltaje` int(11) NOT NULL,
+  `valor_voltaje` float NOT NULL,
   `id_sensor` int(11) NOT NULL,
   `node_id` bigint(20) UNSIGNED NOT NULL,
   `fault_type_id` bigint(20) UNSIGNED DEFAULT NULL
@@ -120,9 +120,9 @@ INSERT INTO `fault_types` (`id`, `nombre`, `detalle`) VALUES
 CREATE TABLE `follow_ups` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `fecha_seguimiento` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `valor_voltaje1` int(11) NOT NULL,
-  `valor_voltaje2` int(11) NOT NULL,
-  `valor_voltaje3` int(11) NOT NULL,
+  `valor_voltaje1` float NOT NULL,
+  `valor_voltaje2` float NOT NULL,
+  `valor_voltaje3` float NOT NULL,
   `node_id` bigint(20) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
